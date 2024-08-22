@@ -140,7 +140,7 @@ export const createText = (
 ): Text => document.createTextNode(data);
 
 export const listen = <
-  T extends HTMLElement,
+  T extends EventTarget,
   K extends keyof HTMLElementEventMap
 >(
   element: T,
@@ -253,7 +253,7 @@ export const createFactory = <
 
 export const createEventFactory = <T extends keyof HTMLElementEventMap>(
   type: T,
-) => <P extends HTMLElement>(
+) => <P extends EventTarget>(
   element: P,
   listener: (event: HTMLElementEventMap[T]) => any,
   options?: boolean | AddEventListenerOptions
