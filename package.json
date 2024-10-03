@@ -11,6 +11,7 @@
     "dist"
   ],
   "devDependencies": {
+    "@types/node": "^22.7.4",
     "typescript": "^5.3.3"
   },
   "scripts": {
