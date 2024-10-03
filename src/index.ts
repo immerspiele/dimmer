@@ -260,8 +260,8 @@ export const createEventFactory = <T extends keyof HTMLElementEventMap>(
 ) => listen(element, type, listener, options);
 
 // Events
-export const onPress = <T extends HTMLElement | Document>(
-  element: T,
+export const onPress = (
+  element: EventTarget,
   callback: (event: MouseEvent | TouchEvent) => void,
 ): () => void => {
   const handlePress = (event: MouseEvent | TouchEvent) => {
