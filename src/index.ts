@@ -42,7 +42,7 @@ export const appendChildren = <T extends HTMLElement | SVGElement>(
   if (Array.isArray(children)) {
     children.forEach((child) => appendChildren(parent, child));
   } else if (typeof children === 'string' || typeof children === 'number' || typeof children === 'boolean') {
-    parent.appendChild(document.createTextNode(children.toString()));
+    parent.appendChild(createText(children.toString()));
   } else {
     parent.appendChild(children);
   }
@@ -54,7 +54,6 @@ export const setAttributes = <T extends HTMLElement>(
   element: T,
   attributes: DimmerNodeAttributes<T>,
 ): T => {
-
   for (const key in attributes) {
     if (key === 'className') {
       element.className = resolveClassNames(attributes.className);
