@@ -1,5 +1,9 @@
 <img width="1010" height="408" alt="logo" src="https://github.com/user-attachments/assets/b5d88c2d-148a-4fff-bd9b-929f3307feb2" />
 
+[![Version](https://img.shields.io/npm/v/@immerspiele/dimmer.svg)](https://www.npmjs.com/package/@immerspiele/dimmer)
+[![CI](https://github.com/immerspiele/dimmer/actions/workflows/ci.yml/badge.svg)](https://github.com/immerspiele/dimmer/actions/workflows/ci.yml)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/@immerspiele/dimmer@latest/dist/index.js?compression=gzip)](https://unpkg.com/@immerspiele/dimmer@latest/dist/index.js)
+
 **Dimmer** is a small, lightweight library for creating DOM elements in pure JavaScript. It’s designed to be fast, convenient, and dependency-free, making it easy to build and manipulate HTML without bulky frameworks.
 
 ## Installation
