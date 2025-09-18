@@ -1,6 +1,7 @@
 {
   "name": "@immerspiele/dimmer",
   "version": "1.0.4",
+  "description": "Small, lightweight library for creating DOM elements in pure JavaScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -11,6 +12,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/immerspiele/dimmer.git"
+  },
   "devDependencies": {
     "@types/node": "^22.7.4",
     "@vitest/coverage-v8": "^2.1.2",
