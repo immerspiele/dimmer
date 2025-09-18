@@ -1,6 +1,6 @@
 {
   "name": "@immerspiele/dimmer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Small, lightweight library for creating DOM elements in pure JavaScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
