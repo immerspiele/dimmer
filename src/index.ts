@@ -260,32 +260,7 @@ export const createEventFactory = <T extends keyof HTMLElementEventMap>(
   options?: boolean | AddEventListenerOptions
 ) => listen(element, type, listener, options);
 
-// Events
-export const onPress = (
-  element: EventTarget,
-  callback: (event: MouseEvent | TouchEvent) => void,
-): () => void => {
-  const handlePress = (event: MouseEvent | TouchEvent) => {
-    event.preventDefault();
-
-    if (event instanceof MouseEvent) {
-      callback(event);
-    } else if (event instanceof TouchEvent) {
-      if (event.touches.length === 1) {
-        callback(event);
-      }
-    }
-  };
-
-  element.addEventListener('touchstart', handlePress as EventListener);
-  element.addEventListener('mousedown', handlePress as EventListener);
-
-  return () => {
-    element.removeEventListener('touchstart', handlePress as EventListener);
-    element.removeEventListener('mousedown', handlePress as EventListener);
-  };
-};
-
+// Event factories
 export const onClick = createEventFactory('click');
 export const onTransitionEnd = createEventFactory('transitionend');
 export const onAnimationEnd = createEventFactory('animationend');

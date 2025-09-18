@@ -15,7 +15,6 @@ import {
   createEventFactory,
   template,
   createText,
-  onPress,
 } from '.';
 
 describe('resolveClassNames', () => {
