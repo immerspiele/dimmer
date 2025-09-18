@@ -19,4 +19,6 @@ jobs:
       - name: Install @rollup/rollup-linux-x64-gnu
         run: npm install @rollup/rollup-linux-x64-gnu
       - name: Run tests
-        run: npm test
+        run: npm test -- --coverage
+      - name: Build package
+        run: npm run build
