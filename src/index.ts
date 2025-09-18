@@ -19,17 +19,19 @@ export type DimmerClassValue =
   | number
   | undefined
   | null
-  | boolean
-  | DimmerClassDictionary
-  | DimmerClassArray;
-
-export type DimmerClassDictionary = Record<string, any>;
+  | boolean;
 
 export type DimmerClassArray = DimmerClassValue[];
 
-export type DimmerNodeAttributes<T extends HTMLElement | SVGElement> = {
-  className?: DimmerClassValue;
-} & Partial<T>;
+export type DimmerClassDictionary = Record<string, any>;
+
+export type DimmerClassArgument = DimmerClassValue | DimmerClassArray | DimmerClassDictionary;
+
+export type DimmerClassNameAttributes = {
+  className?: DimmerClassArgument;
+}
+
+export type DimmerNodeAttributes<T extends HTMLElement | SVGElement> = Omit<Partial<T>, 'className'> & DimmerClassNameAttributes;
 
 export const appendChildren = <T extends HTMLElement | SVGElement>(
   parent: T,
@@ -169,7 +171,7 @@ export const insertBefore = (
 };
 
 export const resolveClassNames = (
-  classNames: DimmerClassValue,
+  classNames: DimmerClassArgument,
 ): string => {
   if (!classNames) {
     return '';
