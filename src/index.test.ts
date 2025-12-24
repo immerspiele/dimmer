@@ -122,6 +122,13 @@ describe('createElement', () => {
     });
   });
 
+  describe('with class name array', () => {
+    test('should create a div element with class name', () => {
+      const element = createElement('div', ['test1', ['test2']]);
+      expect(element.className).toBe('test1 test2');
+    });
+  });
+
   describe('with attributes', () => {
     test('should create a div element with attributes', () => {
       const element = createElement('div', { id: 'test' });

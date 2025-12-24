@@ -96,7 +96,7 @@ export const createElement = <
   K extends keyof HTMLElementTagNameMap,
 >(
   tagName: K,
-  attributes?: DimmerNodeAttributes<HTMLElementTagNameMap[K]> | DimmerClassArray | string | null,
+  attributes?: DimmerNodeAttributes<HTMLElementTagNameMap[K]> | DimmerClassArgument | null,
   children?: DimmerChild,
 ): HTMLElementTagNameMap[K] => {
   const element = document.createElement(tagName);
@@ -247,7 +247,7 @@ export const template = (
 
 export const createFactory = <
   TagName extends keyof HTMLElementTagNameMap,
-  Attributes extends DimmerNodeAttributes<HTMLElementTagNameMap[TagName]> | DimmerClassArray | string | null,
+  Attributes extends DimmerNodeAttributes<HTMLElementTagNameMap[TagName]> | DimmerClassArgument | null,
 >(
   tagName: TagName,
 ) => (attributes?: Attributes | null, children?: DimmerChild) => createElement(tagName, attributes, children);
